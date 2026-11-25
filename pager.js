@@ -2,7 +2,7 @@
 // Usado pelo leitor do Entrelinhas (herdado do Veredas). Também esconde o cursor do mouse quando fica parado.
 const Pager = (() => {
   const GAP = 48;
-  const hooks = { next: null, prev: null, change: null };   // next/prev: ao passar da última/primeira página (carregar outro capítulo); change: a cada virada de página
+  const hooks = { next: null, prev: null, change: null, info: null };   // info(page, pages): texto do contador (o Entrelinhas mostra capítulo e livro)   // next/prev: ao passar da última/primeira página (carregar outro capítulo); change: a cada virada de página
   let main, box, prevB, nextB, info;
   let page = 0, pages = 1, W = 0, step = 1, raf = 0, wheelAt = 0, snapT = 0;
 
@@ -25,9 +25,22 @@ const Pager = (() => {
     return null;
   }
 
+  // largura realmente desenhada de um contêiner em colunas (mesma regra usada para contar as páginas da leitura)
+  function wideOf(el) {
+    el.scrollLeft = 0;
+    let wide = el.scrollWidth;
+    try {
+      const rg = document.createRange(); rg.selectNodeContents(el);
+      const rr = rg.getBoundingClientRect();
+      if (rr.width > 0) wide = Math.min(wide, Math.ceil(rr.right - el.getBoundingClientRect().left));
+    } catch (e) { /* usa o scrollWidth */ }
+    return Math.max(1, Math.round((wide + GAP) / step));
+  }
   function updateBar() {
     const last = page >= pages - 1;
-    info.textContent = I18N.t("pager.page", { page: page + 1, pages });
+    let txt = null;
+    if (hooks.info) { try { txt = hooks.info(page, pages); } catch (e) { console.error(e); } }
+    info.textContent = txt != null ? txt : I18N.t("pager.page", { page: page + 1, pages });
     prevB.disabled = page <= 0 && !hooks.prev;
     prevB.textContent = page <= 0 && hooks.prev ? I18N.t("pager.prevChapter") : I18N.t("pager.prev");
     nextB.textContent = last && hooks.next ? I18N.t("pager.nextChapter") : I18N.t("pager.next");
@@ -145,5 +158,5 @@ const Pager = (() => {
     layoutNow(false);
   }
 
-  return { init, layout: schedule, layoutNow, reveal, reset, next, prev, goTo, hooks, firstOnPage, pageOf, buildAlign, refreshBar: () => updateBar(), get page() { return page; }, get pages() { return pages; } };
+  return { init, layout: schedule, layoutNow, reveal, reset, next, prev, goTo, hooks, firstOnPage, pageOf, metrics: () => ({ W, step, GAP }), measure: wideOf, buildAlign, refreshBar: () => updateBar(), get page() { return page; }, get pages() { return pages; } };
 })();

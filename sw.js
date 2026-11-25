@@ -1,5 +1,5 @@
 /* Entrelinhas: guarda o app no aparelho para abrir sem internet (as obras e o dicionário entram no guardado na 1ª vez que são abertos). */
-const CACHE = "entrelinhas-1.0.0-544d2fc1";
+const CACHE = "entrelinhas-1.1.0-4fbe7b90";
 const FILES = ["./", "dict.css", "dict.js", "dicts/index.json", "entrelinhas.css", "home.css", "home.js", "i18n.js", "icons/app-180.png", "icons/app-192.png", "icons/app-512.png", "icons/icon128.png", "icons/icon16.png", "icons/icon32.png", "icons/icon48.png", "icons/maskable-512.png", "index.html", "lang/pt.js", "library.js", "manifest.webmanifest", "narrator.js", "obras/dom-casmurro.json", "obras/index.json", "options.css", "options.html", "options.js", "pager.js", "reader.css", "reader.html", "reader.js", "wake.js", "web-shim.js", "web.css"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => {

@@ -5,17 +5,20 @@
 
 body { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif; }
 
-/* prosa: parágrafos com recuo, capítulos seguidos (os de Machado são curtos) */
+/* prosa: parágrafos com recuo; cada capítulo começa numa página nova */
 body[data-mode="prose"] .v { display: block; margin: 0; text-indent: 1.4em; }
 body[data-mode="prose"] .body .v:first-child { text-indent: 0; }
 body[data-mode="prose"] .body .v:first-child::first-letter { font-size: 1.05em; }
-.chapter + .chapter { break-before: auto; margin-top: 2.6em; }
+.chapter + .chapter { -webkit-column-break-before: always; break-before: column; }
+/* o Safari tende a "equilibrar" o texto entre as colunas (páginas meio vazias): cada página enche até embaixo */
+main { -webkit-column-fill: auto; column-fill: auto; }
+.chapter .kicker { padding-top: .6em; }
 .chapter .kicker { text-align: center; font-size: .52em; letter-spacing: .2em; color: var(--accent); }
 .chapter h1 { text-align: center; font-weight: 400; font-style: italic; font-size: 1.32em; margin: .25em 0 1em; }
 body[data-align="justify"] .chapter h1, body[data-align="justify"] .kicker { text-align: center; }
 
 /* frontispício da obra */
-.front { text-align: center; padding: 3.2em 0 2.8em; break-after: column; }
+.front { text-align: center; padding: 3.2em 0 2.8em; -webkit-column-break-after: always; break-after: column; }
 .front .f-author { font: 600 .55em system-ui, sans-serif; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); }
 .front .f-title { font-size: 2.2em; line-height: 1.15; margin: .5em 0 .35em; color: var(--fg); }
 .front .f-title::after { content: ""; display: block; width: 3.2em; height: 2px; margin: .55em auto 0; background: linear-gradient(90deg, transparent, #c99a45, transparent); }
@@ -41,3 +44,11 @@ body[data-align="justify"] .chapter h1, body[data-align="justify"] .kicker { tex
 .tocitem .tt { flex: 1; }
 .tocitem .tk { flex: none; color: var(--accent); font: 13px system-ui, sans-serif; }
 .tocitem.cur { background: color-mix(in srgb, var(--accent) 14%, transparent); }
+
+/* contador: página no capítulo · página no livro */
+#pageinfo { font-variant-numeric: tabular-nums; white-space: pre-line; line-height: 1.3; font-size: 12.5px; }
+#pageinfo::first-line { color: var(--fg); font-weight: 600; }
+@media (max-width: 520px) {
+  .pagebar .mid { min-width: 76px; }
+  .pagebar button#prev, .pagebar button#next { padding: 9px 10px; font-size: 13.5px; }
+}
