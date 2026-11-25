@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Entrelinhas">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#6e2a3a">
+<link rel="apple-touch-icon" href="icons/app-180.png">
+<link rel="icon" href="icons/icon32.png">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Entrelinhas</title>
+<link rel="stylesheet" href="reader.css">
+<link rel="stylesheet" href="dict.css">
+<link rel="stylesheet" href="web.css">
+<link rel="stylesheet" href="entrelinhas.css">
+</head>
+<body data-mode="prose">
+  <div class="toolbar">
+    <span class="brand"><img class="logo" src="icons/icon16.png" alt="">Entrelinhas</span>
+    <div class="group nav"><button id="tocBtn" type="button">Índice</button></div>
+    <div class="group">
+      <button id="sizeDown" title="Diminuir letra" data-i18n-title="common.size.down">A−</button>
+      <button id="sizeUp" title="Aumentar letra" data-i18n-title="common.size.up">A+</button>
+    </div>
+    <div class="group">
+      <button data-theme-btn="light" data-i18n="common.theme.light">Claro</button>
+      <button data-theme-btn="sepia" data-i18n="common.theme.sepia">Sépia</button>
+      <button data-theme-btn="dark" data-i18n="common.theme.dark">Escuro</button>
+    </div>
+    <div class="group align" id="alignGroup"></div>
+    <label><span data-i18n="common.width">Largura</span>
+      <select id="width">
+        <option value="26" data-i18n="common.width.narrow">Estreita</option>
+        <option value="32" data-i18n="common.width.medium">Média</option>
+        <option value="40" data-i18n="common.width.wide">Larga</option>
+      </select>
+    </label>
+    <label id="orthLabel" hidden><span>Grafia</span>
+      <select id="orth">
+        <option value="atual">Atualizada</option>
+        <option value="orig">Original</option>
+      </select>
+    </label>
+  </div>
+
+  <div id="pager"><main id="content"></main></div>
+
+  <div class="narrbar" id="narrbar" hidden>
+    <button id="narrPrev" type="button"></button><button id="narrStop" type="button"></button><button id="narrNext" type="button"></button>
+    <span id="narrInfo" class="narrinfo"></span>
+    <select id="narrRate"><option value="0.7">0,7×</option><option value="0.85">0,85×</option><option value="1">1×</option><option value="1.15">1,15×</option><option value="1.3">1,3×</option><option value="1.5">1,5×</option></select>
+  </div>
+
+  <div class="pagebar">
+    <button id="prev" data-i18n="common.prev">‹ Anterior</button>
+    <button id="narrBtn" class="narrbtn" type="button" hidden></button>
+    <button id="dictBtn" class="dictbtn" type="button" hidden></button>
+    <div class="mid"><div id="pageinfo"></div><div id="credit" class="credit"></div></div>
+    <button id="next" data-i18n="common.next">Próxima ›</button>
+  </div>
+
+  <div id="toc" class="toc" hidden role="dialog" aria-modal="true" aria-labelledby="tocTitle">
+    <div class="tocbox">
+      <div class="tochead"><h2 id="tocTitle">Índice</h2><button id="tocClose" type="button" aria-label="Fechar">×</button></div>
+      <div id="tocMeta" class="tocmeta"></div>
+      <ol id="tocList" class="toclist"></ol>
+    </div>
+  </div>
+
+  <script src="web-shim.js"></script>
+  <script src="i18n.js"></script>
+  <script src="lang/pt.js"></script>
+  <script src="library.js"></script>
+  <script src="pager.js"></script>
+  <script src="wake.js"></script>
+  <script src="narrator.js"></script>
+  <script src="dict.js"></script>
+  <script src="reader.js"></script>
+</body>
+</html>

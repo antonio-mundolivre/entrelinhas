@@ -1,0 +1,14 @@
+{
+ "dicts": [
+  {
+   "id": "figueiredo",
+   "name": "Dicionário de Cândido de Figueiredo (1913)",
+   "short": "Figueiredo",
+   "lang": "pt",
+   "shards": "figueiredo/{k}.json",
+   "count": 124529,
+   "license": "domínio público",
+   "credit": "Cândido de Figueiredo, Novo Dicionário da Língua Portuguesa, 2ª ed. 1913 (Projeto Gutenberg nº 31552). Ortografia da época, contemporânea de Machado."
+  }
+ ]
+}

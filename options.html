@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#6e2a3a">
+<link rel="apple-touch-icon" href="icons/app-180.png">
+<link rel="icon" href="icons/icon32.png">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Entrelinhas – Ajustes</title>
+<link rel="stylesheet" href="options.css">
+<link rel="stylesheet" href="web.css">
+<style>
+  :root { --accent: #7b2e3e; --bg: #f7f2ea; }
+  button.primary:hover { background: #63212f; }
+  h1 { display: flex; align-items: center; gap: 10px; }
+  h1 .logo { width: 32px; height: 32px; border-radius: 7px; }
+  .rateline { display: flex; align-items: center; gap: 10px; }
+  .field { display: flex; flex-direction: column; gap: 4px; margin: 8px 0; font-size: 13px; color: #555; }
+  .field select { max-width: 420px; }
+  .dictsample { font-size: 15px; background: #fffdf9; border: 1px solid var(--rule); border-radius: 10px; padding: 10px 14px; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 6px 0; }
+  .implist div { padding: 6px 0; border-bottom: 1px dashed var(--rule); display: flex; justify-content: space-between; gap: 10px; align-items: center; }
+  .err { color: #b00020; }
+</style>
+</head>
+<body>
+<main>
+  <h1><img class="logo" src="icons/icon48.png" alt="">Ajustes</h1>
+  <div id="ver" class="hint"></div>
+
+  <section>
+    <h2>Leitura</h2>
+    <label class="inl"><input type="checkbox" id="keepAwake"> <span>Manter a tela acesa durante a leitura</span></label>
+    <p class="hint">Tamanho da letra, tema, largura, alinhamento e grafia (atualizada ou original) ficam no próprio leitor, no botão “Aa”.</p>
+  </section>
+
+  <section>
+    <h2>Narração</h2>
+    <p class="hint">O narrador lê o texto em voz alta com as vozes do aparelho, parágrafo a parágrafo.</p>
+    <div id="narrBox">
+      <div class="field"><span>Velocidade</span>
+        <div class="rateline"><input id="narrRate" type="range" min="0.6" max="1.5" step="0.05" value="1"><output id="narrRateOut">1×</output></div>
+      </div>
+      <label class="field"><span>Voz em português</span><select id="narrVoice"></select></label>
+      <label class="inl"><input type="checkbox" id="narrAuto"> <span>Seguir para o próximo capítulo ao terminar</span></label>
+      <div class="row"><button id="narrTest" type="button">Ouvir amostra</button></div>
+    </div>
+  </section>
+
+  <section id="dicionario">
+    <h2>Dicionário</h2>
+    <p class="hint">No leitor, ligue o botão do livro (no rodapé) e toque numa palavra. O dicionário é o de Cândido de Figueiredo (1913), da época de Machado: bom para as palavras que caíram em desuso. Ele usa a grafia antiga, mas a busca entende as duas.</p>
+    <label class="inl"><input type="checkbox" id="dictOn"> <span>Usar o dicionário de Figueiredo</span></label>
+    <label class="field"><span>Fonte do cartão</span><select id="dictFont"></select></label>
+    <p id="dictSample" class="dictsample"><b>Casmurro</b> — m. e adj. Aquelle que é teimoso, cabeçudo. Triste, sorumbático.</p>
+  </section>
+
+  <section>
+    <h2>Obras</h2>
+    <p class="hint">Para acrescentar uma obra preparada no formato do Entrelinhas (arquivo .json “entrelinhas-obra”), escolha o arquivo. Ela fica guardada só neste aparelho.</p>
+    <div class="row"><button id="impBtn" type="button">Adicionar obra (arquivo .json)…</button><input type="file" id="impFile" accept=".json,application/json" hidden></div>
+    <p id="impMsg" class="hint"></p>
+    <div id="impList" class="implist"></div>
+  </section>
+
+  <section>
+    <h2>Progresso</h2>
+    <div id="progList" class="implist"></div>
+    <div class="row"><button id="resetAll" class="danger" type="button">Zerar o progresso de todas as obras</button></div>
+  </section>
+
+  <section>
+    <h2>Sobre</h2>
+    <p class="hint">Entrelinhas — leitor das obras de Machado de Assis, derivado do Veredas. Tudo fica neste aparelho; nada é enviado a servidores.</p>
+    <p class="hint"><b>Dom Casmurro</b>: texto da 1ª edição (H. Garnier, 1899), na transcrição de Jorge Stolfi (Unicamp, 2012) a partir do fac-símile da Brasiliana USP. Grafia atualizada pelo Entrelinhas segundo o Acordo Ortográfico de 1990 (uso brasileiro): mudam a grafia e a acentuação; o vocabulário de Machado (cousa, dous), a pontuação e a sintaxe ficam como estão. A grafia de 1899 pode ser vista no leitor.</p>
+    <p class="hint"><b>Dicionário</b>: Cândido de Figueiredo, Novo Dicionário da Língua Portuguesa (1913), Projeto Gutenberg nº 31552, domínio público.</p>
+  </section>
+</main>
+<script src="web-shim.js"></script>
+<script src="i18n.js"></script>
+<script src="lang/pt.js"></script>
+<script src="library.js"></script>
+<script src="narrator.js"></script>
+<script src="dict.js"></script>
+<script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+/* Entrelinhas: cores próprias e tipografia de prosa (por cima do reader.css herdado do Veredas) */
+:root { --bg: #fbf8f3; --fg: #26201c; --muted: #8a7f76; --accent: #7b2e3e; --bar: #f2ece3; --rule: #e6ddd0; }
+[data-theme="sepia"] { --bg: #f4ecd8; --fg: #3f3022; --muted: #8d7b62; --accent: #8a3636; --bar: #ebe0c5; --rule: #dccfae; }
+[data-theme="dark"]  { --bg: #16151a; --fg: #dcd6cc; --muted: #85808a; --accent: #d9939c; --bar: #1f1d24; --rule: #2e2b34; }
+
+body { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif; }
+
+/* prosa: parágrafos com recuo, capítulos seguidos (os de Machado são curtos) */
+body[data-mode="prose"] .v { display: block; margin: 0; text-indent: 1.4em; }
+body[data-mode="prose"] .body .v:first-child { text-indent: 0; }
+body[data-mode="prose"] .body .v:first-child::first-letter { font-size: 1.05em; }
+.chapter + .chapter { break-before: auto; margin-top: 2.6em; }
+.chapter .kicker { text-align: center; font-size: .52em; letter-spacing: .2em; color: var(--accent); }
+.chapter h1 { text-align: center; font-weight: 400; font-style: italic; font-size: 1.32em; margin: .25em 0 1em; }
+body[data-align="justify"] .chapter h1, body[data-align="justify"] .kicker { text-align: center; }
+
+/* frontispício da obra */
+.front { text-align: center; padding: 3.2em 0 2.8em; break-after: column; }
+.front .f-author { font: 600 .55em system-ui, sans-serif; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); }
+.front .f-title { font-size: 2.2em; line-height: 1.15; margin: .5em 0 .35em; color: var(--fg); }
+.front .f-title::after { content: ""; display: block; width: 3.2em; height: 2px; margin: .55em auto 0; background: linear-gradient(90deg, transparent, #c99a45, transparent); }
+.front .f-year { color: var(--muted); font-size: .8em; letter-spacing: .1em; }
+
+/* fim da obra */
+.fim { text-align: center; margin: 3em 0 1em; break-inside: avoid; }
+.fim-word { letter-spacing: .5em; color: var(--accent); font-size: .9em; margin-bottom: 1.2em; }
+.fim-btn { font-size: 14px; padding: 8px 16px; }
+
+/* índice */
+.toc[hidden] { display: none; }
+.toc { position: fixed; inset: 0; z-index: 70; background: rgba(20, 12, 14, .45); display: flex; align-items: center; justify-content: center; padding: 16px; }
+.tocbox { background: var(--bg); color: var(--fg); border: 1px solid var(--rule); border-radius: 16px; width: min(560px, 100%); max-height: min(78dvh, 760px); display: flex; flex-direction: column; box-shadow: 0 16px 40px rgba(0,0,0,.3); }
+.tochead { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px 4px; }
+.tochead h2 { margin: 0; font-weight: 400; font-style: italic; font-size: 22px; }
+.tochead button { width: 34px; height: 34px; border-radius: 50%; padding: 0; font-size: 20px; line-height: 1; }
+.tocmeta { padding: 0 18px 10px; color: var(--muted); font: 13px system-ui, sans-serif; border-bottom: 1px solid var(--rule); }
+.toclist { list-style: none; margin: 0; padding: 6px 8px 12px; overflow-y: auto; }
+.tocitem { display: flex; align-items: baseline; gap: 10px; width: 100%; text-align: left; border: 0; background: none; padding: 7px 10px; border-radius: 8px; font: 16px/1.35 inherit; font-family: inherit; color: var(--fg); }
+.tocitem:hover { background: var(--bar); }
+.tocitem .tn { flex: none; min-width: 3.4em; color: var(--muted); font: 12px system-ui, sans-serif; letter-spacing: .04em; }
+.tocitem .tt { flex: 1; }
+.tocitem .tk { flex: none; color: var(--accent); font: 13px system-ui, sans-serif; }
+.tocitem.cur { background: color-mix(in srgb, var(--accent) 14%, transparent); }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Entrelinhas">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#6e2a3a">
+<link rel="apple-touch-icon" href="icons/app-180.png">
+<link rel="icon" href="icons/icon32.png">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Entrelinhas</title>
+<link rel="stylesheet" href="home.css">
+</head>
+<body>
+<main>
+  <header class="head">
+    <h1><img class="logo" src="icons/icon48.png" alt="">Entrelinhas</h1>
+    <a class="icon" href="options.html" title="Ajustes" aria-label="Ajustes">⚙</a>
+  </header>
+  <p class="sub">Machado de Assis · obras em grafia atualizada</p>
+
+  <section id="cont" class="cont" hidden>
+    <div class="label">Continuar lendo</div>
+    <div class="ctitle" id="contTitle"></div>
+    <div class="cwhere" id="contWhere"></div>
+    <div class="bar"><div id="contBar"></div></div>
+    <button id="contBtn" class="primary">Continuar</button>
+  </section>
+
+  <div id="shelves"></div>
+  <p class="foot">Textos em domínio público. A grafia foi atualizada pelo Entrelinhas; a original fica a um toque, no leitor.</p>
+</main>
+<script src="web-shim.js"></script>
+<script src="i18n.js"></script>
+<script src="lang/pt.js"></script>
+<script src="library.js"></script>
+<script src="home.js"></script>
+</body>
+</html>
