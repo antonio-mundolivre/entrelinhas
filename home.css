@@ -32,3 +32,14 @@ h2 { font: 600 12px system-ui, sans-serif; text-transform: uppercase; letter-spa
 .ring::after { content: ""; width: 26px; height: 26px; border-radius: 50%; background: var(--card); }
 .soon { font-size: 11px; color: #a89d93; border: 1px dashed #d8ccbc; border-radius: 999px; padding: 2px 8px; flex: none; }
 .foot { color: var(--muted); font-size: 12px; text-align: center; margin-top: 26px; }
+.tomotabs { display: flex; gap: 6px; overflow-x: auto; margin: 0 0 12px; }
+.tomotab { flex: none; border-radius: 999px; padding: 7px 14px; font-size: 14px; }
+.tomotab.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+.tomohead { margin: 6px 4px 4px; }
+.tlabel { font: 700 11px system-ui, sans-serif; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); }
+.tname { font: 400 28px/1.15 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; margin-top: 2px; }
+.tlife { color: var(--muted); font-size: 13px; margin-top: 2px; }
+.tintro { color: #5d544c; font-size: 14px; margin: 8px 0 0; }
+.tomohead .bar { margin: 12px 0 6px; }
+.tstat { color: var(--muted); font-size: 12.5px; }
+.tomotabs[hidden] { display: none; }

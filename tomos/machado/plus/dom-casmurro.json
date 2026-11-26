@@ -1,0 +1,401 @@
+{
+ "format": "entrelinhas-plus",
+ "version": 1,
+ "work": "dom-casmurro",
+ "autoria": "Resenha e fichas escritas para o Entrelinhas (com o Claude), conferidas no texto do romance. Os números entre parênteses são capítulos.",
+ "ficha": [
+  [
+   "Publicação",
+   "1899, Livraria Garnier (Rio de Janeiro)"
+  ],
+  [
+   "Gênero",
+   "Romance, narrado em primeira pessoa"
+  ],
+  [
+   "Extensão",
+   "148 capítulos curtos"
+  ],
+  [
+   "Tempo da história",
+   "De 1857 (Bentinho com quinze anos) até a velhice do narrador"
+  ],
+  [
+   "Lugares",
+   "Rio de Janeiro: rua de Matacavalos, Glória, Tijuca, Flamengo, Engenho Novo"
+  ],
+  [
+   "Na obra do autor",
+   "Sétimo romance de Machado, depois de Quincas Borba (1891) e antes de Esaú e Jacó (1904)"
+  ]
+ ],
+ "resenha": {
+  "antes": [
+   "Um homem velho, que vive só com um criado no Engenho Novo, mandou construir ali uma cópia exata da casa em que passou a infância, na rua de Matacavalos (II). A casa não bastou para trazer o passado de volta, e ele resolve escrevê-lo. O livro que temos nas mãos é essa tentativa: Bento Santiago contando, na velhice, como foi a sua juventude.",
+   "O título é uma brincadeira dele mesmo. Um jovem poeta, ofendido por vê-lo cochilar enquanto recitava versos no trem, passou a chamá-lo de Dom Casmurro, e os vizinhos adotaram o apelido. Casmurro, explica o narrador, no sentido popular de homem calado e metido consigo (I).",
+   "A história começa em novembro de 1857, quando Bentinho, com quinze anos, ouve atrás de uma porta que o seu namoro com a vizinha, Capitu, já é assunto da casa, e que a mãe pretende mandá-lo para o seminário (III). Daí em diante acompanhamos o amor dos dois, a família de viúvos que cerca o rapaz, o agregado José Dias, o seminário e o que vem depois.",
+   "Vale ler com atenção a quem conta. Bento conversa o tempo todo com o leitor, interrompe a história, admite falhas de memória, escolhe o que mostrar e o que calar. Os capítulos são curtos, alguns de poucas linhas, e o humor é fino. É o mesmo Machado das Memórias Póstumas de Brás Cubas, agora com um narrador que não está morto, mas sozinho, e que tem uma tese a defender."
+  ],
+  "depois": [
+   "A pergunta que acompanha o livro desde 1899 é se Capitu traiu Bento com Escobar. O romance não responde. Tudo o que sabemos passa pela memória de um narrador que confessa o próprio ciúme desde a adolescência: o primeiro acesso vem de uma frase de José Dias, num capítulo que ele mesmo intitula “Uma ponta de Iago” (LXII), e mais tarde ele chega a ter ciúme do mar, por um olhar distraído de Capitu (CVII).",
+   "A prova que Bento apresenta é a semelhança de Ezequiel com o amigo morto (CXXXI, CXXXII). O livro, porém, já tinha mostrado que semelhanças enganam: anos antes, o pai de Sancha comenta como Capitu se parece com a sua falecida mulher, num retrato, e conclui que “na vida há dessas semelhanças assim esquisitas” (LXXXIII). E foi a própria Capitu quem chamou a atenção para os olhos do menino.",
+   "O narrador também se compara a Otelo. Ao sair do teatro, conclui que Desdêmona era inocente e que, se fosse culpada como Capitu, mereceria morte pior (CXXXV). A comparação vale nos dois sentidos: Otelo mata uma mulher inocente por causa de um lenço, e Bento manda a família para a Suíça por causa de um rosto.",
+   "Durante décadas o livro foi lido como a história de um adultério. Em 1960, a estudiosa americana Helen Caldwell, em The Brazilian Othello of Machado de Assis, propôs ler o próprio Bento como o problema: um narrador interessado, que acusa. Desde então, a dúvida é a leitura mais aceita, e o romance fica maior por isso. O último capítulo, “E bem, e o resto?” (CXLVIII), devolve a pergunta ao leitor: a Capitu da praia da Glória já estava dentro da menina de Matacavalos, ou foi mudada pelas circunstâncias?"
+  ]
+ },
+ "personagens": [
+  {
+   "nome": "Bento Santiago",
+   "tambem": [
+    "Bentinho",
+    "Dom Casmurro"
+   ],
+   "primeira": "I",
+   "papel": "Narrador",
+   "resumo": "Narra o livro já velho, vivendo só no Engenho Novo. Na história, é o filho único de D. Glória, criado na casa de Matacavalos.",
+   "fatos": [
+    {
+     "cap": "I",
+     "t": "Ganha o apelido de Dom Casmurro de um poeta do trem, e os vizinhos o espalham."
+    },
+    {
+     "cap": "II",
+     "t": "Manda construir no Engenho Novo uma cópia da casa da infância, para “atar as duas pontas da vida”."
+    },
+    {
+     "cap": "III",
+     "t": "Em novembro de 1857, com quinze anos, ouve escondido José Dias falar à mãe do namoro com Capitu."
+    },
+    {
+     "cap": "XI",
+     "t": "Está destinado ao seminário por uma promessa que a mãe fez antes de ele nascer."
+    },
+    {
+     "cap": "LIII",
+     "t": "Vai para o seminário."
+    },
+    {
+     "cap": "XCVII",
+     "t": "Deixa o seminário no fim do ano, com pouco mais de dezessete anos."
+    },
+    {
+     "cap": "XCVIII",
+     "t": "Forma-se em direito aos vinte e dois anos."
+    },
+    {
+     "cap": "CI",
+     "t": "Casa-se com Capitu em 1865."
+    },
+    {
+     "cap": "CVIII",
+     "t": "Nasce o filho; dá-lhe o nome de Ezequiel, o de Escobar."
+    },
+    {
+     "cap": "CXXXVI",
+     "t": "Pensa em matar-se com veneno no café; no capítulo seguinte, quase o dá ao filho."
+    },
+    {
+     "cap": "CXLI",
+     "t": "Leva Capitu e Ezequiel para a Suíça e volta sozinho."
+    }
+   ]
+  },
+  {
+   "nome": "Capitu",
+   "tambem": [
+    "Capitolina"
+   ],
+   "primeira": "III",
+   "papel": "Vizinha, primeiro amor de Bentinho",
+   "resumo": "Filha de Pádua e D. Fortunata, vizinhos dos Santiago em Matacavalos. Curiosa, decidida e mais rápida do que Bentinho para resolver as coisas.",
+   "fatos": [
+    {
+     "cap": "III",
+     "t": "Fez catorze anos na semana anterior à conversa que abre a história."
+    },
+    {
+     "cap": "XIV",
+     "t": "Risca no muro do quintal os nomes BENTO e CAPITOLINA."
+    },
+    {
+     "cap": "XXV",
+     "t": "José Dias diz que ela tem olhos “de cigana oblíqua e dissimulada”."
+    },
+    {
+     "cap": "XXXII",
+     "t": "Bentinho descreve os olhos dela como “olhos de ressaca”."
+    },
+    {
+     "cap": "XLII",
+     "t": "Tem como amigas de colégio Paula e Sancha."
+    },
+    {
+     "cap": "CI",
+     "t": "Casa-se com Bento em 1865; a lua de mel é na Tijuca."
+    },
+    {
+     "cap": "CXXXI",
+     "t": "É ela quem nota que Ezequiel tem nos olhos uma expressão parecida com a de Escobar."
+    },
+    {
+     "cap": "CXXXVIII",
+     "t": "Ouve de Bento que Ezequiel não é filho dele."
+    },
+    {
+     "cap": "CXL",
+     "t": "Volta da igreja e diz que aceita a separação."
+    },
+    {
+     "cap": "CXLI",
+     "t": "Vai para a Suíça com o filho; escreve cartas a Bento, que não vai vê-la."
+    },
+    {
+     "cap": "CXLV",
+     "t": "Morre na Suíça, onde é enterrada."
+    }
+   ]
+  },
+  {
+   "nome": "José Dias",
+   "tambem": [
+    "o agregado"
+   ],
+   "primeira": "III",
+   "papel": "Agregado da família",
+   "resumo": "Mora com os Santiago há muitos anos, cheio de cerimônia e de superlativos. Opina sobre tudo e sabe se fazer necessário.",
+   "fatos": [
+    {
+     "cap": "III",
+     "t": "Abre a história alertando D. Glória sobre o namoro de Bentinho com Capitu."
+    },
+    {
+     "cap": "V",
+     "t": "Chegou à fazenda de Itaguaí apresentando-se como médico homeopata, e mais tarde confessou que não era médico."
+    },
+    {
+     "cap": "XXV",
+     "t": "No Passeio Público, fala a Bentinho dos olhos “de cigana oblíqua e dissimulada” de Capitu."
+    },
+    {
+     "cap": "LXII",
+     "t": "Uma frase dele sobre Capitu e “algum peralta da vizinhança” desperta o primeiro ciúme de Bentinho."
+    },
+    {
+     "cap": "CXLIII",
+     "t": "Morre já velho, morando com Bento, com um último superlativo."
+    }
+   ]
+  },
+  {
+   "nome": "D. Glória",
+   "tambem": [
+    "Maria da Glória Fernandes Santiago",
+    "a mãe de Bentinho"
+   ],
+   "primeira": "III",
+   "papel": "Mãe de Bentinho",
+   "resumo": "Viúva desde os trinta e um anos, vive na casa de Matacavalos com o filho, o irmão Cosme, a prima Justina e José Dias.",
+   "fatos": [
+    {
+     "cap": "VII",
+     "t": "Em 1857 tem quarenta e dois anos; ficou viúva de Pedro de Albuquerque Santiago."
+    },
+    {
+     "cap": "XI",
+     "t": "Prometeu a Deus que, se tivesse um filho homem, faria dele padre."
+    },
+    {
+     "cap": "XCVII",
+     "t": "Aceita, depois de o padre Cabral consultar o bispo, que o filho deixe o seminário."
+    },
+    {
+     "cap": "CXLII",
+     "t": "Morre; Bento manda gravar na sepultura apenas: Uma santa."
+    }
+   ]
+  },
+  {
+   "nome": "Tio Cosme",
+   "primeira": "III",
+   "papel": "Tio de Bentinho",
+   "resumo": "Advogado do crime, viúvo, gordo e sossegado. Mora com a irmã desde que ela enviuvou: é a “casa dos três viúvos”.",
+   "fatos": [
+    {
+     "cap": "VI",
+     "t": "Tem escritório na rua das Violas; José Dias assiste a todas as suas defesas no júri."
+    },
+    {
+     "cap": "CXLII",
+     "t": "Na velhice está quase inválido."
+    }
+   ]
+  },
+  {
+   "nome": "Prima Justina",
+   "primeira": "III",
+   "papel": "Prima viúva que mora com a família",
+   "resumo": "Também viúva, observadora e de língua afiada.",
+   "fatos": [
+    {
+     "cap": "XCVIII",
+     "t": "Acha que Escobar pensou em pedir D. Glória em casamento."
+    },
+    {
+     "cap": "CXLV",
+     "t": "Já doente, pede para ver Ezequiel quando ele volta da Europa."
+    }
+   ]
+  },
+  {
+   "nome": "Pádua",
+   "primeira": "III",
+   "papel": "Pai de Capitu",
+   "resumo": "Funcionário de uma repartição do ministério da guerra, vizinho dos Santiago.",
+   "fatos": [
+    {
+     "cap": "XVI",
+     "t": "Comprou a casa com um prêmio de loteria; quando substitui o chefe por uns tempos, gasta como rico e sofre ao voltar ao posto de antes."
+    }
+   ]
+  },
+  {
+   "nome": "D. Fortunata",
+   "primeira": "XVI",
+   "papel": "Mãe de Capitu",
+   "resumo": "Mulher de Pádua; a família vive com pouco.",
+   "fatos": []
+  },
+  {
+   "nome": "Padre Cabral",
+   "tambem": [
+    "o protonotário"
+   ],
+   "primeira": "XI",
+   "papel": "Padre amigo da casa",
+   "resumo": "Frequenta a casa dos Santiago e dá a Bentinho as lições de latim.",
+   "fatos": [
+    {
+     "cap": "XXXV",
+     "t": "É nomeado protonotário apostólico, título que deixa a família encantada."
+    },
+    {
+     "cap": "XCVII",
+     "t": "Consulta o bispo para que Bentinho possa deixar o seminário."
+    }
+   ]
+  },
+  {
+   "nome": "Escobar",
+   "tambem": [
+    "Ezequiel de Sousa Escobar"
+   ],
+   "primeira": "LVI",
+   "papel": "Amigo do seminário",
+   "resumo": "Colega de seminário de Bentinho, três anos mais velho, filho de um advogado de Curitiba. Tem olhos claros “um pouco fugitivos” e jeito para os números.",
+   "fatos": [
+    {
+     "cap": "LVI",
+     "t": "Torna-se o melhor amigo de Bentinho no seminário."
+    },
+    {
+     "cap": "XCVIII",
+     "t": "Fora do seminário, trabalha quatro anos numa grande casa comercial e passa a negociar com café."
+    },
+    {
+     "cap": "CVIII",
+     "t": "Casado com Sancha, tem uma filha a quem dão o nome de Capitu (a Capituzinha)."
+    },
+    {
+     "cap": "CXXI",
+     "t": "Morre afogado, nadando no mar bravo do Flamengo."
+    }
+   ]
+  },
+  {
+   "nome": "Sancha",
+   "tambem": [
+    "Sanchinha"
+   ],
+   "primeira": "XLII",
+   "papel": "Amiga de Capitu",
+   "resumo": "Colega de colégio de Capitu, filha do comerciante Gurgel.",
+   "fatos": [
+    {
+     "cap": "XLII",
+     "t": "Tem dezessete anos quando aparece, visitando Capitu."
+    },
+    {
+     "cap": "CVIII",
+     "t": "Casada com Escobar, mora no Andaraí e depois no Flamengo; tem uma filha."
+    },
+    {
+     "cap": "CXVIII",
+     "t": "Num aperto de mão, Bento sente por ela uma atração que o perturba."
+    },
+    {
+     "cap": "CXXIX",
+     "t": "Bento se dirige a ela no livro e lhe pede que não o leia."
+    }
+   ]
+  },
+  {
+   "nome": "Gurgel",
+   "primeira": "LXX",
+   "papel": "Pai de Sancha",
+   "resumo": "Viúvo de uns quarenta anos, muito obsequioso, que morre pela filha.",
+   "fatos": [
+    {
+     "cap": "LXXXIII",
+     "t": "Comenta que Capitu se parece com a sua falecida mulher, num retrato: “há dessas semelhanças assim esquisitas”."
+    }
+   ]
+  },
+  {
+   "nome": "Ezequiel",
+   "tambem": [
+    "Ezequiel A. de Santiago"
+   ],
+   "primeira": "CVIII",
+   "papel": "Filho de Bento e Capitu",
+   "resumo": "Nasce depois de anos de espera e recebe o nome do amigo Escobar. Menino imitador, alegre.",
+   "fatos": [
+    {
+     "cap": "CXII",
+     "t": "Imita gestos e jeitos de todo mundo."
+    },
+    {
+     "cap": "CXXXII",
+     "t": "Bento passa a ver no rosto dele, cada vez mais, o rosto de Escobar."
+    },
+    {
+     "cap": "CXLI",
+     "t": "Vai com a mãe para a Suíça."
+    },
+    {
+     "cap": "CXLV",
+     "t": "Volta adulto, apaixonado por arqueologia, e parte numa viagem de estudos à Grécia, ao Egito e à Palestina."
+    },
+    {
+     "cap": "CXLVI",
+     "t": "Morre de febre tifoide onze meses depois e é enterrado perto de Jerusalém."
+    }
+   ]
+  },
+  {
+   "nome": "Manduca",
+   "primeira": "LXXXIV",
+   "papel": "Filho de um vizinho",
+   "resumo": "Rapaz doente, que vivia de cama no interior da casa do pai, um comerciante da vizinhança.",
+   "fatos": [
+    {
+     "cap": "LXXXIV",
+     "t": "Sua morte é anunciada a Bentinho pelo pai, chorando."
+    },
+    {
+     "cap": "XC",
+     "t": "Anos antes, discutira por escrito com Bentinho a guerra da Crimeia: um pela Rússia, outro pelos aliados."
+    }
+   ]
+  }
+ ]
+}

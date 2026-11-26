@@ -3,6 +3,7 @@ const $ = s => document.querySelector(s);
 const PREFS_DEFAULT = { size: 19, theme: "light", width: 32, align: "justify", orth: "atual" };
 let prefs = { ...PREFS_DEFAULT };
 let work = null, wid = "", total = 0, prog = null;
+let tomo = null, allProg = {}, cmap = null, plusData = null, showAll = false;
 let alignRefresh = () => {}, saveT = 0, busy = false;
 
 // ---------- preferências ----------
@@ -30,7 +31,8 @@ function bindToolbar() {
   $("#width").onchange = e => { prefs.width = +e.target.value; applyPrefs(); savePrefs(); };
   $("#orth").onchange = e => { prefs.orth = e.target.value; savePrefs(); rerender(); syncDict(); };
   alignRefresh = Pager.buildAlign($("#alignGroup"), () => prefs.align, v => { prefs.align = v; applyPrefs(); savePrefs(); });
-  $("#tocBtn").onclick = openToc;
+  $("#tocBtn").onclick = () => openToc();
+  document.querySelectorAll(".toctabs [data-tab]").forEach(b => b.onclick = () => showTab(b.dataset.tab));
   $("#tocClose").onclick = closeToc;
   $("#toc").addEventListener("click", e => { if (e.target.id === "toc") closeToc(); });
   document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("#toc").hidden) { e.stopPropagation(); closeToc(); } }, true);
@@ -52,6 +54,14 @@ function fillChapter(sec, ch) {
   if (ch === 0) {
     const f = el("div", "front");
     f.append(el("div", "f-author", work.author || ""), el("div", "f-title", work.title), el("div", "f-year", work.year ? String(work.year) : ""));
+    const ep = work.epigraph || [];
+    if (ep.length) {                                  // epígrafe: versos e, na última linha, o autor citado
+      const q = el("blockquote", "f-epi");
+      const lines = ep.length > 1 ? ep.slice(0, -1) : ep;
+      lines.forEach(t => q.append(el("div", "", Library.pick(t, orth))));
+      if (ep.length > 1) q.append(el("cite", "", Library.pick(ep[ep.length - 1], orth)));
+      f.append(q);
+    }
     parts.push(f);
   }
   parts.push(el("div", "kicker", c.n ? "Capítulo " + c.n : ""));
@@ -96,9 +106,18 @@ function onPage(page, pages) {
   saveT = setTimeout(async () => {          // decide no momento de gravar, com a paginação já assentada
     const atEnd = cur === total - 1 && Pager.page >= Pager.pages - 1;
     const h = here();
-    prog = await Library.setPos(wid, cur, atEnd ? "end" : h.p, total);
+    prog = await Library.setPos(wid, cur, atEnd ? "end" : h.p, total, liveRc(), cmap && cmap.total);
+    allProg[wid] = prog;
+    Pager.refreshBar();
   }, 250);
   document.title = Library.chapLabel(work.chapters[cur], prefs.orth) + " — " + work.title;
+}
+// quanto do texto da obra já foi lido (caracteres), contando o capítulo aberto pela página
+function liveRc() {
+  if (!cmap) return 0;
+  const a = cmap.starts[cur], b = cur + 1 < total ? cmap.starts[cur + 1] : cmap.total;
+  const pages = Math.max(1, Pager.pages);
+  return Math.round(a + (b - a) * Math.min(1, (Pager.page + 1) / pages));
 }
 // p: número do parágrafo a mostrar, ou "last" para abrir na última página do capítulo
 async function openAt(ch, p) {
@@ -182,13 +201,16 @@ function pageInfo(page, pages) {
     const tot = book.total - book.pages[cur] + pages;          // usa a contagem real do capítulo aberto
     s += "\nlivro " + Math.min(tot, book.offs[cur] + page + 1) + "/" + tot;
   }
+  if (tomo && cmap) s += "\ntomo " + Library.fmtPct(Library.tomoFraction(tomo, allProg, { id: wid, rc: liveRc() }).frac);
   return s;
 }
 let measureT = 0;
 const scheduleMeasure = () => { clearTimeout(measureT); measureT = setTimeout(measureBook, 700); };
 
-// ---------- índice ----------
-function openToc() {
+// ---------- índice, personagens e "sobre a obra" ----------
+const chIndex = n => work.chapters.findIndex(c => c.n === n);
+const reach = () => Math.max(cur, prog ? prog.max || 0 : 0, prog && prog.done ? total : 0);
+function openToc(tab) {
   const list = $("#tocList"), max = prog ? prog.max || 0 : 0;
   list.replaceChildren();
   work.chapters.forEach((c, i) => {
@@ -200,10 +222,87 @@ function openToc() {
     li.append(b); list.append(li);
   });
   const pct = Library.percent(prog, total);
+  $("#tocTitle").textContent = work.title;
   $("#tocMeta").textContent = [work.author, work.year, total + " capítulos", pct ? pct + "% lido" : ""].filter(Boolean).join(" · ");
+  const hasPers = !!(plusData && plusData.personagens && plusData.personagens.length);
+  const hasSobre = !!(plusData && (plusData.resenha || plusData.ficha));
+  document.querySelector('[data-tab="pers"]').hidden = !hasPers;
+  document.querySelector('[data-tab="sobre"]').hidden = !hasSobre;
+  if (hasPers) renderPers();
+  if (hasSobre) renderSobre();
   $("#toc").hidden = false;
-  const c = list.querySelector(".cur"); if (c) c.scrollIntoView({ block: "center" });
+  showTab(tab || "cap");
+  const c = list.querySelector(".cur"); if (c && (tab || "cap") === "cap") c.scrollIntoView({ block: "center" });
   document.body.classList.add("picking");
+}
+function showTab(id) {
+  document.querySelectorAll(".toctabs [data-tab]").forEach(b => { b.classList.toggle("on", b.dataset.tab === id); b.setAttribute("aria-selected", b.dataset.tab === id); });
+  document.querySelectorAll(".tocpane").forEach(p => { p.hidden = p.dataset.pane !== id; });
+}
+function chipTo(n, label) {
+  const i = chIndex(n);
+  const b = el("button", "fc", label || n); b.type = "button"; b.title = "Ir ao capítulo " + n;
+  if (i < 0) { b.disabled = true; return b; }
+  b.onclick = () => { closeToc(); openAt(i, 0); };
+  return b;
+}
+function renderPers() {
+  const pane = document.querySelector('[data-pane="pers"]'), r = reach();
+  pane.replaceChildren();
+  const bar = el("label", "spoil");
+  const cb = el("input"); cb.type = "checkbox"; cb.checked = showAll;
+  cb.onchange = () => { showAll = cb.checked; renderPers(); };
+  bar.append(cb, el("span", "", " Mostrar tudo (revela o enredo)"));
+  pane.append(bar);
+  if (!showAll) pane.append(el("p", "plushint", "Mostrando só o que aparece até o capítulo " + (work.chapters[Math.min(r, total - 1)].n || r + 1) + ", o mais adiante que você leu."));
+  let hiddenPeople = 0;
+  plusData.personagens.forEach(p => {
+    const first = chIndex(p.primeira);
+    if (!showAll && first > r) { hiddenPeople++; return; }
+    const card = el("section", "pcard");
+    const head = el("div", "phead");
+    head.append(el("h3", "", p.nome));
+    if (p.papel) head.append(el("span", "prole", p.papel));
+    card.append(head);
+    if (p.tambem && p.tambem.length) card.append(el("div", "paka", "Também: " + p.tambem.join(", ")));
+    if (p.resumo) card.append(el("p", "presumo", p.resumo));
+    const facts = (p.fatos || []).filter(f => showAll || chIndex(f.cap) <= r);
+    if (facts.length) {
+      const ul = el("ul", "pfatos");
+      facts.forEach(f => { const li = el("li"); li.append(chipTo(f.cap), el("span", "", f.t)); ul.append(li); });
+      card.append(ul);
+    }
+    const later = (p.fatos || []).length - facts.length;
+    if (later > 0) card.append(el("div", "plater", later === 1 ? "Mais 1 informação adiante na leitura." : "Mais " + later + " informações adiante na leitura."));
+    const foot = el("div", "pfirst"); foot.append(el("span", "", "Aparece no capítulo "), chipTo(p.primeira));
+    card.append(foot);
+    pane.append(card);
+  });
+  if (hiddenPeople) pane.append(el("p", "plushint", hiddenPeople === 1 ? "1 personagem ainda não apareceu até aqui." : hiddenPeople + " personagens ainda não apareceram até aqui."));
+  if (plusData.autoria) pane.append(el("p", "plusautor", plusData.autoria));
+}
+function renderSobre() {
+  const pane = document.querySelector('[data-pane="sobre"]');
+  pane.replaceChildren();
+  if (tomo) pane.append(el("div", "ptomo", tomo.title + (tomo.life ? " · " + tomo.life : "")));
+  if (plusData.ficha && plusData.ficha.length) {
+    const dl = el("dl", "pficha");
+    plusData.ficha.forEach(([k, v]) => { dl.append(el("dt", "", k), el("dd", "", v)); });
+    pane.append(dl);
+  }
+  const res = plusData.resenha || {};
+  if (res.antes && res.antes.length) {
+    pane.append(el("h3", "", "Antes de ler"));
+    res.antes.forEach(t => pane.append(el("p", "", t)));
+  }
+  if (res.depois && res.depois.length) {
+    const d = el("details", "pdepois");
+    if (prog && prog.done) d.open = true;
+    d.append(el("summary", "", "Depois de ler (revela o enredo)"));
+    res.depois.forEach(t => d.append(el("p", "", t)));
+    pane.append(d);
+  }
+  if (plusData.autoria) pane.append(el("p", "plusautor", plusData.autoria));
 }
 function closeToc() { $("#toc").hidden = true; document.body.classList.remove("picking"); }
 
@@ -231,7 +330,12 @@ function fatal(msg) {
   total = work.chapters.length;
   $("#orthLabel").hidden = !Library.hasOrig(work);
   $("#credit").textContent = work.credit || "";
-  prog = (await Library.progress())[wid] || null;
+  allProg = await Library.progress();
+  prog = allProg[wid] || null;
+  const found = await Library.find(wid);
+  tomo = found ? found.tomo : null;
+  cmap = Library.charMap(work);
+  Library.plus(wid).then(p => { plusData = p; });
   Narrator.attach({
     root: () => $("#content"), viewport: () => $("#pager"), lang: () => "pt",
     advance: async () => { if (!Narrator.settings().auto || cur >= total - 1) return false; await openAt(cur + 1, 0); return true; },
@@ -243,7 +347,7 @@ function fatal(msg) {
   if (cap != null) await openAt(+cap, 0);
   else if (prog && !prog.done) await openAt(prog.ch, prog.p);
   else await openAt(0, 0);
-  window.addEventListener("pagehide", () => { const h = here(); if (h) Library.setPos(wid, h.ch, h.p, total); });
+  window.addEventListener("pagehide", () => { const h = here(); if (h) Library.setPos(wid, h.ch, h.p, total, liveRc(), cmap.total); });
   // conta as páginas do livro todo (de novo quando a tela, a letra ou a grafia mudam)
   (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(scheduleMeasure);
   new ResizeObserver(scheduleMeasure).observe($("#pager"));

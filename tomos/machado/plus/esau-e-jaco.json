@@ -1,0 +1,443 @@
+{
+ "format": "entrelinhas-plus",
+ "version": 1,
+ "work": "esau-e-jaco",
+ "autoria": "Resenha e fichas escritas para o Entrelinhas (com o Claude), conferidas no texto do romance. Os números entre parênteses são capítulos.",
+ "ficha": [
+  [
+   "Publicação",
+   "1904, H. Garnier (Rio de Janeiro)"
+  ],
+  [
+   "Gênero",
+   "Romance, narrado em terceira pessoa por um narrador que conversa com o leitor"
+  ],
+  [
+   "Extensão",
+   "121 capítulos curtos"
+  ],
+  [
+   "Tempo da história",
+   "De 1871 (a consulta à cabocla) até os primeiros anos da República, com a Proclamação de 1889 no meio"
+  ],
+  [
+   "Lugares",
+   "Rio de Janeiro: morro do Castelo, Botafogo, Catete, Andaraí, a Rua do Ouvidor; Petrópolis"
+  ],
+  [
+   "Na obra do autor",
+   "Oitavo romance de Machado, depois de Dom Casmurro (1899) e antes de Memorial de Aires (1908)"
+  ],
+  [
+   "Esta edição",
+   "A fonte digital não traz a Advertência da primeira edição, em que Machado apresenta o livro como um dos cadernos deixados pelo Conselheiro Aires"
+  ]
+ ],
+ "resenha": {
+  "antes": [
+   "Duas irmãs sobem o morro do Castelo, em 1871, para consultar uma adivinha. Natividade, a mais bela e mais rica, quer saber o destino dos filhos gêmeos, Pedro e Paulo, que mal fizeram um ano. A cabocla diz que os meninos brigaram ainda no ventre da mãe e que hão de ser grandes, sem dizer em quê: “cousas futuras” (I). Essa profecia vaga, alegre e inútil, governa o resto do livro.",
+   "Os gêmeos crescem iguais no rosto e opostos em tudo o mais. Um compra um retrato de Luís XVI, o outro um de Robespierre (XXIV); um estuda Medicina no Rio, o outro Direito em São Paulo (XXXV); um é pelo Império, o outro pela República. Entre os dois aparece Flora, filha de um político conservador, uma moça que o Conselheiro Aires chama, com carinho, de inexplicável (XXXIV).",
+   "O título vem da Bíblia: Esaú e Jacó, os gêmeos que lutavam no seio de Rebeca. Machado transporta a briga bíblica para a família de um banqueiro carioca e a cruza com a história do país: a Abolição, o baile da Ilha Fiscal e a Proclamação da República passam pelo romance vistos de perto, com ironia e sem heróis.",
+   "Quem observa tudo é o Conselheiro Aires, diplomata aposentado, amigo da família, homem de meias palavras que anota o que vê nos cadernos de um Memorial (XII). Vale a pena ler devagar os capítulos curtos, prestar atenção ao narrador que interrompe a história para comentar o próprio livro, e acompanhar o episódio da tabuleta da Confeitaria do Império (XLIX, LXII–LXIII), talvez a página mais citada sobre a mudança de regime no Brasil."
+  ],
+  "depois": [
+   "A profecia da cabocla se cumpre do jeito mais irônico possível: Pedro e Paulo chegam a deputados (CXVI), mas não são grandes, apenas iguais a si mesmos. A frase final de Aires, de que eles eram “os mesmos, desde o útero” (CXXI), fecha o livro com a ideia que o abriu: a rivalidade não tem causa externa, nem política, nem amorosa.",
+   "Flora é o centro afetivo do romance e não escolhe nenhum dos dois. Nas visões dos capítulos LXXIX e LXXX os gêmeos se fundem numa só pessoa, e ela recusa também o casamento rico com Nóbrega (CIV). Morre durante o estado de sítio (CVI–CVII), e junto à sua cova os irmãos juram uma conciliação perpétua (CIX) que não dura.",
+   "A tabuleta de Custódio resume o modo como Machado vê a República: uma troca de nomes. O confeiteiro teme que “Império” lhe custe as vidraças e que “República” lhe custe outra pintura se o regime cair; Aires acaba sugerindo o próprio nome do dono (LXIII). Batista, por sua vez, troca de partido por insistência da mulher, fica à espera de uma presidência que o 15 de novembro desfaz (LV–LX) e logo aceita uma comissão do novo governo (LXXI).",
+   "Natividade morre de tifo pouco depois da posse dos filhos, depois de lhes pedir amizade verdadeira (CXX). Os gêmeos chegam a andar juntos na Câmara, como Castor e Pólux, e voltam a se detestar na sessão seguinte (CXXI). Nóbrega, o antigo andador das almas que embolsou a esmola de Natividade (LXXIV), é o único que fica de fato rico e grande, o que completa a sátira.",
+   "Muitos leitores veem no Conselheiro Aires o verdadeiro protagonista e uma espécie de autorretrato tardio de Machado. Ele volta, sozinho, no Memorial de Aires (1908), o último romance do autor."
+  ]
+ },
+ "personagens": [
+  {
+   "nome": "Natividade",
+   "tambem": [
+    "baronesa de Santos"
+   ],
+   "primeira": "I",
+   "papel": "Mãe dos gêmeos",
+   "resumo": "Mulher de Agostinho Santos, bela, elegante e muito presente na sociedade do Rio. Vive para o destino dos filhos e para a profecia que ouviu no Castelo.",
+   "fatos": [
+    {
+     "cap": "I",
+     "t": "Sobe o morro do Castelo com a irmã para consultar a cabocla sobre os gêmeos."
+    },
+    {
+     "cap": "II",
+     "t": "Na descida, feliz com a profecia, deita uma nota de dous mil-réis na bacia de um irmão das almas."
+    },
+    {
+     "cap": "XX",
+     "t": "Torna-se baronesa quando o marido recebe o título de Barão de Santos."
+    },
+    {
+     "cap": "CV",
+     "t": "Desce de Petrópolis para cuidar de Flora doente."
+    },
+    {
+     "cap": "CXX",
+     "t": "Antes de morrer de tifo, pede aos filhos amizade verdadeira e que se não quebre nunca mais."
+    }
+   ]
+  },
+  {
+   "nome": "Perpétua",
+   "tambem": [
+    "D. Perpétua"
+   ],
+   "primeira": "I",
+   "papel": "Irmã de Natividade",
+   "resumo": "Mais velha que a irmã, baixa e gorda, companheira de quase todas as horas da família Santos.",
+   "fatos": [
+    {
+     "cap": "I",
+     "t": "Acompanha Natividade na consulta à cabocla."
+    },
+    {
+     "cap": "VIII",
+     "t": "É viúva de um tenente de artilharia que morreu capitão na guerra do Paraguai."
+    },
+    {
+     "cap": "L",
+     "t": "Guarda como relíquia de família o tinteiro de Evaristo, que promete mostrar a Aires."
+    },
+    {
+     "cap": "CXVII",
+     "t": "Vai com a irmã ver os sobrinhos tomarem assento na Câmara."
+    }
+   ]
+  },
+  {
+   "nome": "Agostinho Santos",
+   "tambem": [
+    "Santos",
+    "Barão de Santos",
+    "Agostinho José dos Santos"
+   ],
+   "primeira": "IV",
+   "papel": "Pai dos gêmeos, banqueiro",
+   "resumo": "Nascido pobre em Maricá, enriqueceu depressa no Rio. Crédulo, vaidoso e bom pai; busca no espiritismo a explicação da briga dos filhos.",
+   "fatos": [
+    {
+     "cap": "IV",
+     "t": "Veio para o Rio na febre das ações de 1855 e ganhou muito dinheiro em pouco tempo."
+    },
+    {
+     "cap": "X",
+     "t": "Quer consultar Plácido, seu chefe e mestre espírita, sobre a briga dos filhos no ventre."
+    },
+    {
+     "cap": "XX",
+     "t": "É agraciado com o título de Barão de Santos."
+    },
+    {
+     "cap": "XLVIII",
+     "t": "Sonha ser deputado aos sessenta anos; a mulher não deixa."
+    },
+    {
+     "cap": "CXX",
+     "t": "Chega a tempo de ouvir as últimas palavras de Natividade."
+    }
+   ]
+  },
+  {
+   "nome": "Pedro",
+   "primeira": "VIII",
+   "papel": "Um dos gêmeos",
+   "resumo": "Monarquista, mais contido e dissimulado que o irmão. Médico.",
+   "fatos": [
+    {
+     "cap": "VIII",
+     "t": "Nasce com o irmão em 7 de abril de 1870."
+    },
+    {
+     "cap": "XXIV",
+     "t": "Compra um retrato de Luís XVI e se ofende por o rei custar menos que Robespierre."
+    },
+    {
+     "cap": "XXXV",
+     "t": "Estuda na Escola de Medicina, no Rio."
+    },
+    {
+     "cap": "XLIV",
+     "t": "Diz que extirparia o gérmen republicano com um decreto."
+    },
+    {
+     "cap": "CIX",
+     "t": "Junto à cova de Flora, jura com Paulo a conciliação perpétua: “agora, que desapareceu, que nos una”."
+    },
+    {
+     "cap": "CXV",
+     "t": "Modera o tom e acaba aceitando o regime republicano."
+    },
+    {
+     "cap": "CXXI",
+     "t": "Na Câmara, propõe votar cada um com o seu partido sem nunca se atacarem."
+    }
+   ]
+  },
+  {
+   "nome": "Paulo",
+   "primeira": "VIII",
+   "papel": "Um dos gêmeos",
+   "resumo": "Republicano, mais impetuoso e aberto. Advogado.",
+   "fatos": [
+    {
+     "cap": "VIII",
+     "t": "Nasce com o irmão em 7 de abril de 1870."
+    },
+    {
+     "cap": "XXIV",
+     "t": "Compra um retrato de Robespierre."
+    },
+    {
+     "cap": "XXXV",
+     "t": "Estuda na Faculdade de Direito, em São Paulo."
+    },
+    {
+     "cap": "XLIII",
+     "t": "Faz um discurso que a mãe acha de sentido republicano."
+    },
+    {
+     "cap": "CXV",
+     "t": "Depois da República, passa à oposição ao governo."
+    },
+    {
+     "cap": "CXXI",
+     "t": "Volta de uma viagem a Minas e os irmãos já não se falam bem."
+    }
+   ]
+  },
+  {
+   "nome": "Conselheiro Aires",
+   "tambem": [
+    "Aires",
+    "José da Costa Marcondes Aires"
+   ],
+   "primeira": "XI",
+   "papel": "Diplomata, amigo da família",
+   "resumo": "Viúvo sem filhos, polido, irônico e conciliador. Observa os gêmeos a vida inteira e anota tudo no Memorial.",
+   "fatos": [
+    {
+     "cap": "XII",
+     "t": "Diplomata de carreira, chega do Pacífico com seis meses de licença; escreve num caderno chamado Memorial."
+    },
+    {
+     "cap": "XXXII",
+     "t": "Aposentado, volta a morar na sua casa do Catete, recusando ir viver com a irmã em Andaraí."
+    },
+    {
+     "cap": "LXIII",
+     "t": "Ajuda Custódio a achar um nome para a tabuleta da confeitaria."
+    },
+    {
+     "cap": "XCIX",
+     "t": "Leva Flora para a casa da irmã, a título de ares novos."
+    },
+    {
+     "cap": "CXXI",
+     "t": "Pensa que os gêmeos não mudaram: são os mesmos, desde o útero."
+    }
+   ]
+  },
+  {
+   "nome": "Flora",
+   "primeira": "XXXI",
+   "papel": "Moça amada pelos dois gêmeos",
+   "resumo": "Filha única de Batista e D. Cláudia, delicada, artista, incapaz de escolher entre Pedro e Paulo.",
+   "fatos": [
+    {
+     "cap": "XXXI",
+     "t": "Nasceu em agosto de 1871, “no ministério Rio Branco”, como diz a mãe."
+    },
+    {
+     "cap": "XXXIV",
+     "t": "Aires a chama de inexplicável."
+    },
+    {
+     "cap": "LVI",
+     "t": "Quase desmaia ao saber que o pai vai presidir uma província no Norte, longe dos gêmeos."
+    },
+    {
+     "cap": "LXXX",
+     "t": "Nas suas visões, Pedro e Paulo se confundem numa só pessoa."
+    },
+    {
+     "cap": "XCIX",
+     "t": "Vai morar uns tempos com D. Rita, em Andaraí."
+    },
+    {
+     "cap": "CIV",
+     "t": "Recusa o pedido de casamento de Nóbrega: “Diga que não pretendo casar”."
+    },
+    {
+     "cap": "CV",
+     "t": "Adoece em Andaraí; a família vem cuidar dela."
+    },
+    {
+     "cap": "CVI",
+     "t": "Morre, durante o estado de sítio."
+    }
+   ]
+  },
+  {
+   "nome": "Batista",
+   "primeira": "XXX",
+   "papel": "Pai de Flora, político",
+   "resumo": "Advogado, ex-presidente de província, conservador de aspecto governamental e vontade fraca.",
+   "fatos": [
+    {
+     "cap": "XXX",
+     "t": "Perdeu a presidência de uma província; ele culpa as eleições, mas a imprensa falava de uma concessão de águas pedida pelo cunhado."
+    },
+    {
+     "cap": "LV",
+     "t": "Levado pela mulher, deixa os conservadores e se aproxima dos liberais."
+    },
+    {
+     "cap": "LVI",
+     "t": "Espera o decreto que o fará presidente de uma província no Norte."
+    },
+    {
+     "cap": "LX",
+     "t": "A nomeação não chega a sair: na manhã de 15 de novembro cai o Império."
+    },
+    {
+     "cap": "LXXI",
+     "t": "Aceita uma comissão do governo republicano."
+    }
+   ]
+  },
+  {
+   "nome": "D. Cláudia",
+   "primeira": "XXX",
+   "papel": "Mãe de Flora",
+   "resumo": "Mulher de Batista, mais ambiciosa e enérgica que o marido.",
+   "fatos": [
+    {
+     "cap": "XXX",
+     "t": "Acha que valia a pena sofrer a imprensa para chegar à província."
+    },
+    {
+     "cap": "LV",
+     "t": "“Viúva da presidência”, trama em segredo a mudança de partido do marido."
+    },
+    {
+     "cap": "CV",
+     "t": "Instala-se em casa de D. Rita para cuidar da filha doente."
+    }
+   ]
+  },
+  {
+   "nome": "D. Rita",
+   "primeira": "XXXII",
+   "papel": "Irmã de Aires",
+   "resumo": "Viúva, mora em Andaraí e é a última parenta do conselheiro.",
+   "fatos": [
+    {
+     "cap": "XXXII",
+     "t": "Cortou os cabelos para pô-los no caixão do marido."
+    },
+    {
+     "cap": "XCIX",
+     "t": "Recebe Flora em sua casa e vive encantada com ela."
+    },
+    {
+     "cap": "CIV",
+     "t": "Transmite a Nóbrega a recusa da moça."
+    }
+   ]
+  },
+  {
+   "nome": "Nóbrega",
+   "primeira": "LXXIV",
+   "papel": "Antigo irmão das almas, capitalista",
+   "resumo": "Pedia esmola para as almas quando recebeu a nota de Natividade; enriqueceu e tornou-se capitalista.",
+   "fatos": [
+    {
+     "cap": "LXXIV",
+     "t": "É o andador das almas que guardou para si a nota de dous mil-réis; enriqueceu no encilhamento."
+    },
+    {
+     "cap": "LXXVI",
+     "t": "Dá a uma mendiga uma nota velha de dous mil-réis."
+    },
+    {
+     "cap": "CIII",
+     "t": "Dono de palacete, decide que Flora há de ser sua esposa."
+    },
+    {
+     "cap": "CIV",
+     "t": "Fica assombrado com a recusa."
+    },
+    {
+     "cap": "CVIII",
+     "t": "No enterro de Flora, imagina o enterro esplêndido que lhe teria feito."
+    }
+   ]
+  },
+  {
+   "nome": "Bárbara",
+   "tambem": [
+    "a cabocla do Castelo"
+   ],
+   "primeira": "I",
+   "papel": "Adivinha do morro do Castelo",
+   "resumo": "Moça miúda e airosa que faz as consultas enquanto o pai canta na viola.",
+   "fatos": [
+    {
+     "cap": "I",
+     "t": "Diz a Natividade que os filhos brigaram no ventre e serão grandes: “cousas futuras”."
+    }
+   ]
+  },
+  {
+   "nome": "Plácido",
+   "primeira": "X",
+   "papel": "Mestre espírita de Santos",
+   "resumo": "Velho de grandes barbas, chefe da seita que Santos frequenta.",
+   "fatos": [
+    {
+     "cap": "XI",
+     "t": "Tenta converter Aires às verdades eternas."
+    },
+    {
+     "cap": "LXXXI",
+     "t": "Morre de repente, ensinando a discípulos a correspondência das vogais com os sentidos."
+    }
+   ]
+  },
+  {
+   "nome": "Custódio",
+   "primeira": "XXXII",
+   "papel": "Confeiteiro, vizinho de Aires",
+   "resumo": "Dono da Confeitaria do Império, no Catete, defronte da casa do conselheiro.",
+   "fatos": [
+    {
+     "cap": "XLIX",
+     "t": "Manda refazer a velha tabuleta da confeitaria."
+    },
+    {
+     "cap": "LXII",
+     "t": "Com a revolução na rua, manda dizer ao pintor: “Pare no D.”"
+    },
+    {
+     "cap": "LXIII",
+     "t": "Recusa “República” e “Governo”; Aires acaba sugerindo “Confeitaria do Custódio”."
+    }
+   ]
+  },
+  {
+   "nome": "Gouveia",
+   "primeira": "XCV",
+   "papel": "Pretendente de Flora",
+   "resumo": "Oficial de secretaria, solteiro, que se apaixona por Flora numa missa.",
+   "fatos": [
+    {
+     "cap": "XCV",
+     "t": "Vê Flora à missa e sai da igreja apaixonado."
+    }
+   ]
+  }
+ ]
+}
