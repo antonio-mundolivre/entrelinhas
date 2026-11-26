@@ -28,12 +28,20 @@ function bindToolbar() {
   $("#sizeUp").onclick = () => { prefs.size = Math.min(44, prefs.size + 2); applyPrefs(); savePrefs(); };
   document.querySelectorAll("[data-theme-btn]").forEach(b => b.onclick = () => { prefs.theme = b.dataset.themeBtn; applyPrefs(); savePrefs(); });
   $("#width").onchange = e => { prefs.width = +e.target.value; applyPrefs(); savePrefs(); };
-  $("#orth").onchange = e => { prefs.orth = e.target.value; savePrefs(); rerender(); };
+  $("#orth").onchange = e => { prefs.orth = e.target.value; savePrefs(); rerender(); syncDict(); };
   alignRefresh = Pager.buildAlign($("#alignGroup"), () => prefs.align, v => { prefs.align = v; applyPrefs(); savePrefs(); });
   $("#tocBtn").onclick = openToc;
   $("#tocClose").onclick = closeToc;
   $("#toc").addEventListener("click", e => { if (e.target.id === "toc") closeToc(); });
   document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("#toc").hidden) { e.stopPropagation(); closeToc(); } }, true);
+}
+
+// dicionário acompanha a grafia: com a de 1913 ligada nos Ajustes, “Grafia: Original” abre o verbete original
+async function syncDict() {
+  try {
+    const old = (await Dict.list()).find(d => d.id === "figueiredo-1913");
+    if (old && old.enabled) await Dict.setDefault(prefs.orth === "orig" ? "figueiredo-1913" : "figueiredo");
+  } catch (e) { /* sem dicionário */ }
 }
 
 // ---------- capítulos ----------
@@ -229,6 +237,7 @@ function fatal(msg) {
     advance: async () => { if (!Narrator.settings().auto || cur >= total - 1) return false; await openAt(cur + 1, 0); return true; },
     notify: m => { const e = $("#pageinfo"); if (e) e.textContent = m; }
   });
+  syncDict();
   Dict.attach({ root: () => $("#content"), lang: () => "pt", notify: m => { const e = $("#pageinfo"); if (e) e.textContent = m; } });
   const cap = q.get("cap");
   if (cap != null) await openAt(+cap, 0);

@@ -36,9 +36,12 @@ async function initDict() {
   const paint = () => { const f = Dict.fonts.find(x => x.id === Dict.getFont()) || Dict.fonts[0]; sample.style.fontFamily = f.stack; fsel.value = f.id; };
   paint();
   fsel.onchange = async () => { await Dict.setFont(fsel.value); paint(); };
-  const d = (await Dict.list()).find(x => x.id === "figueiredo");
+  const all = await Dict.list();
+  const d = all.find(x => x.id === "figueiredo"), old = all.find(x => x.id === "figueiredo-1913");
   $("dictOn").checked = !!(d && d.enabled);
   $("dictOn").onchange = e => Dict.setEnabled("figueiredo", e.target.checked);
+  $("dict1913").checked = !!(old && old.enabled);
+  $("dict1913").onchange = async e => { await Dict.setEnabled("figueiredo-1913", e.target.checked); if (!e.target.checked) await Dict.setDefault("figueiredo"); };
 }
 async function renderWorks() {
   const cat = await Library.list(), prog = await Library.progress();
